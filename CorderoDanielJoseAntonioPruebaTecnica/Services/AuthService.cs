@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.IdentityModel.Tokens
-using System.IdentityModel.Tokens.JWT;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace CorderoDanielJoseAntonioPruebaTecnica.Services
 {
@@ -17,7 +17,7 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Services
         }
 
         // Usuario de prueba
-        private readonly string _hardcodedEmail = "user@gmail.com";
+        private readonly string _hardcodedEmail = "antonio@gmail.com";
         private readonly string _hardcodedPassword = "12345678";
 
         public string Authenticate(string email, string password)
