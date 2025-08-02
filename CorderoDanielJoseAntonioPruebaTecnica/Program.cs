@@ -1,10 +1,17 @@
+using CorderoDanielJoseAntonioPruebaTecnica.Data;
 using CorderoDanielJoseAntonioPruebaTecnica.Models;
 using CorderoDanielJoseAntonioPruebaTecnica.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+//Conexion con la Base de Datos
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 
@@ -40,7 +47,10 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+//Servicios
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
 builder.Services.AddControllers();
 
 
