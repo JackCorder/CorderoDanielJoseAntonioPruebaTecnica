@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CorderoDanielJoseAntonioPruebaTecnica.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250802191922_Initial")]
+    [Migration("20250802230026_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -39,6 +39,12 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Migrations
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

@@ -11,5 +11,7 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Models
         // Campo no mapeado (para mostrar al cliente)
         [NotMapped]
         public string Descripcion { get; set; }
+        public decimal Precio { get; set; }
+        public int Stock { get; set; }
     }
 }
