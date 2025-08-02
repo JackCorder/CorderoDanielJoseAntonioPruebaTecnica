@@ -16,7 +16,9 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Services
             var product = new Product
             {
                 Nombre = dto.Nombre,
-                DescripcionEncriptada = AesEncryptionHelper.Encrypt(dto.Descripcion)
+                DescripcionEncriptada = AesEncryptionHelper.Encrypt(dto.Descripcion),
+                Precio = dto.Precio,
+                Stock = dto.Stock
             };
 
             _context.Productos.Add(product);
@@ -31,7 +33,9 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Services
             {
                 Id = p.Id,
                 Nombre = p.Nombre,
-                Descripcion = AesEncryptionHelper.Decrypt(p.DescripcionEncriptada)
+                Descripcion = AesEncryptionHelper.Decrypt(p.DescripcionEncriptada),
+                Precio = p.Precio,
+                Stock = p.Stock
             };
         }
 
@@ -42,7 +46,9 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Services
                 {
                     Id = p.Id,
                     Nombre = p.Nombre,
-                    Descripcion = AesEncryptionHelper.Decrypt(p.DescripcionEncriptada)
+                    Descripcion = AesEncryptionHelper.Decrypt(p.DescripcionEncriptada),
+                    Precio = p.Precio,
+                    Stock = p.Stock
                 }).ToListAsync();
         }
 
@@ -53,6 +59,8 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Services
 
             product.Nombre = dto.Nombre;
             product.DescripcionEncriptada = AesEncryptionHelper.Encrypt(dto.Descripcion);
+            product.Precio = dto.Precio;
+            product.Stock = dto.Stock;
 
             await _context.SaveChangesAsync();
             return true;
