@@ -13,9 +13,9 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Tests.Services
         {
             var options = Options.Create(new JwtSettings
             {
-                Key = "EstaEsUnaClaveSuperSecreta12345678", // Debe tener al menos 16 caracteres
-                Issuer = "TestIssuer",
-                Audience = "TestAudience",
+                Key = "$Tx71{H|?r%q84nB>ZLke1A+ty>2ew£31W",
+                Issuer = "PruebaTecnicaJACD",
+                Audience = "PruebaTecnicaUsuarios",
                 ExpirationMinutes = 60
             });
 
