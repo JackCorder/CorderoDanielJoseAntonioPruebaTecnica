@@ -8,7 +8,7 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Controllers
 {
     [ApiController]
     [Route("api/v1/auth")]
-    public class AuthController : Controller
+    public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
 

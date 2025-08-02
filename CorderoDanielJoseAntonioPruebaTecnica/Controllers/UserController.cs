@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace CorderoDanielJoseAntonioPruebaTecnica.Controllers
 {
     [ApiController]
-    [Route("api/v1/user")]
+    [Route("api/v1/users")]
     public class UserController : ControllerBase
     {
         [Authorize]
-        [HttpGet("perfil")]
+        [HttpGet]
         public IActionResult Perfil()
         {
             var email = User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Email)?.Value;
