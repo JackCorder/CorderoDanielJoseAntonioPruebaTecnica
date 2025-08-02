@@ -8,11 +8,11 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Controllers
 {
     [ApiController]
     [Route("api/v1/auth")]
-    public class LoginController : Controller
+    public class AuthController : Controller
     {
         private readonly IAuthService _authService;
 
-        public LoginController(IAuthService authService)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }
