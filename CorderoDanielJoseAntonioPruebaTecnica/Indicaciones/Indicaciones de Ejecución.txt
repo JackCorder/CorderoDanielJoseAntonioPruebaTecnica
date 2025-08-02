@@ -1,0 +1,7 @@
+﻿//Migrar Base de Datos
+add-migration Initial
+update-database
+
+//Correo y Contraseña
+antonio@gmail.com
+12345678
