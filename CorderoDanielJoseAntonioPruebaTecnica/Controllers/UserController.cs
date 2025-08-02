@@ -8,7 +8,7 @@ namespace CorderoDanielJoseAntonioPruebaTecnica.Controllers
     public class UserController : ControllerBase
     {
         [Authorize]
-        [HttpGet]
+        [HttpGet("perfil")]
         public IActionResult Perfil()
         {
             var email = User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Email)?.Value;
